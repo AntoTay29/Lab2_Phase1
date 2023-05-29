@@ -1,0 +1,21 @@
+<div>
+  <h2>{{ movie.title }}</h2>
+  <p>Cast: {{ movie.cast }}</p>
+  <p>Director: {{ movie.director }}</p>
+  <p>Release Year: {{ movie.releaseYear }}</p>
+  <p>Genres: {{ movie.genres }}</p>
+  <p>Production Companies: {{ movie.productionCompanies }}</p>
+</div>
+
+// TypeScript code for Movie Details Component
+import { Component, Input } from '@angular/core';
+import { Movie } from './movie.model';
+
+({
+  selector: 'app-movie-details',
+  templateUrl: './movie-details.component.html',
+  styleUrls: ['./movie-details.component.css']
+})
+export class MovieDetailsComponent {
+  @Input() movie: Movie;
+}
