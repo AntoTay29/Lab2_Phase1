@@ -1,0 +1,9 @@
+<label>Genre:</label>
+<select [(ngModel)]="selectedGenre">
+  <option value="">All</option>
+  <option value="action">Action</option>
+  <option value="adventure">Adventure</option>
+  
+</select>
+
+<button (click)="filterMovies()">Filter</button>
