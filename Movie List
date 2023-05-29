@@ -1,20 +1,23 @@
-// TypeScript code for Movie Filter Component
-import { Component } from '@angular/core';
-import { MovieService } from './movie.service';
+<!-- HTML template for Movie List Component -->
+<ul>
+  <li *ngFor="let movie of movies">
+    <span (mouseenter)="showSummary(movie)">{{ movie.title }}</span>
+    <!-- Display other relevant fields -->
+  </li>
+</ul>
+
+import { Component, Input } from '@angular/core';
+import { Movie } from './movie.model';
 
 ({
-  selector: 'app-movie-filter',
-  templateUrl: './movie-filter.component.html',
-  styleUrls: ['./movie-filter.component.css']
+  selector: 'app-movie-list',
+  templateUrl: './movie-list.component.html',
+  styleUrls: ['./movie-list.component.css']
 })
-export class MovieFilterComponent {
-  selectedGenre: string;
+export class MovieListComponent {
+  @Input() movies: Movie[];
 
-  constructor(private movieService: MovieService) {}
-
-  filterMovies() {
-    
-    const filteredMovies = this.movieService.getFilteredMovies(this.selectedGenre);
-    
+  showSummary(movie: Movie) {
+    // Display movie summary when hovering over the title
   }
 }
