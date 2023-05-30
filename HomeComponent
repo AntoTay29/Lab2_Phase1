@@ -1,0 +1,31 @@
+<div class="container">
+  <h2>Movie Filter</h2>
+  
+  
+  <h2>Filtered Movies</h2>
+  <div *ngFor="let movie of filteredMovies">
+    <h3 (mouseover)="showSummary(movie)">{{ movie.title }}</h3>
+    <p *ngIf="movie.showSummary">{{ movie.shortSummary }}</p>
+   
+  </div>
+</div>
+
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent {
+  filteredMovies: any[] = []; // Array to store the filtered movies
+
+ 
+  filterMovies() {
+    
+  }
+
+  showSummary(movie: any) {
+    movie.showSummary = true;
+  }
+}
