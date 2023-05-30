@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Movie } from './movie.model';
 
-({
+@injectable({
   providedIn: 'root'
 })
 export class MovieService {
